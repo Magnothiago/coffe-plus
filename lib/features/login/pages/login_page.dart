@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -12,92 +11,96 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.only(
-            left: 20,
-            right: 20,
-            top: 200,
-            bottom: 80,
-          ),
-          child: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              color: Colors.brown,
-            ),
-            width: double.infinity,
-            height: double.infinity,
-            child: Center(
-              child: Column(
-                children: [
-                  Text(
-                    "The Sensory Pour",
-                    style: TextStyle(
-                      fontSize: 36,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                  Text("Experience artisanal perfection."),
-                  SizedBox(height: 20),
-                  TextFormField(
-                    decoration: InputDecoration(
-                      labelText: 'Email',
-                      hintText: 'Digite seu email',
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  TextFormField(
-                    decoration: InputDecoration(
-                      labelText: 'Senha',
-                      hintText: 'Digite sua senha',
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  ElevatedButton(
-                    style: ButtonStyle(
-                      fixedSize: MaterialStateProperty.all(Size(300, 50)),
-                    ),
-                    onPressed: () {
-                      print('Login button pressed');
-                    },
-                    child: Text('Entrar'),
-                  ),
-                  SizedBox(height: 60),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.white,
-                        ),
-                        width: 80,
-                        height: 50,
-                      ),
-                      SizedBox(width: 40),
-                      Container(
-                        width: 80,
-                        height: 50,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.white,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
+      body: Stack(
+        fit: StackFit.expand,
+        children: [
+          Image.asset('assets/images/back.jpeg', fit: BoxFit.cover),
+          Container(color: Colors.black.withValues(alpha: 0.35)),
+          Center(
+            child: SingleChildScrollView(
+              child: Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(24.0),
+                  child: _LoginForm(),
+                ),
               ),
             ),
           ),
-        ),
+        ],
       ),
+    );
+  }
+}
+
+class _LoginForm extends StatelessWidget {
+  const _LoginForm({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Text(
+          'The Sensory Pour',
+          textAlign: TextAlign.center,
+          style: Theme.of(context).textTheme.headlineMedium,
+        ),
+        const SizedBox(height: 4),
+        Text(
+          'Expirience artesal perfection',
+          textAlign: TextAlign.center,
+          style: Theme.of(context).textTheme.bodyMedium,
+        ),
+        const SizedBox(height: 24),
+        TextField(decoration: InputDecoration(labelText: 'Email')),
+        const SizedBox(height: 16),
+        TextField(
+          decoration: InputDecoration(labelText: 'Password'),
+          obscureText: true,
+        ),
+        const SizedBox(height: 24),
+        Row(
+          children: [
+            Checkbox(onChanged: (value) {}, value: false),
+            const SizedBox(width: 8),
+            const Text('Remember me'),
+            const Spacer(),
+            const Text('Forgot password?'),
+          ],
+        ),
+        SizedBox(height: 24),
+        SizedBox(
+          width: double.infinity,
+          height: 52,
+          child: ElevatedButton(
+            onPressed: () {},
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color.fromRGBO(60, 42, 33, 1),
+            ),
+            child: Text(
+              'Login',
+              style: TextStyle(color: Colors.white, fontSize: 16),
+            ),
+          ),
+        ),
+        SizedBox(height: 24),
+        Row(
+          children: [
+            Expanded(
+              child: Divider(color: const Color.fromRGBO(60, 42, 33, 1)),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              child: Text(
+                'OR CONTINUE WITH',
+                style: TextStyle(color: const Color.fromRGBO(60, 42, 33, 1)),
+              ),
+            ),
+            Expanded(
+              child: Divider(color: const Color.fromRGBO(60, 42, 33, 1)),
+            ),
+          ],
+        ),
+      ],
     );
   }
 }
