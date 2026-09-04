@@ -1,0 +1,845 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1. Configurar dependências e geração de código": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663960887
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663973005
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787664148662
+      }
+    ],
+    "2. Configurar injeção de dependências (GetIt + injectable)": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663960987
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787664153073
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787664339897
+      }
+    ],
+    "3.1 Criar enums de catálogo e opções": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663961017
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787664154376
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787664341016
+      }
+    ],
+    "3.2 Implementar modelo Product com json_serializable": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663961049
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787664348461
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787664576777
+      }
+    ],
+    "3.3 Implementar modelo CartItem com json_serializable": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663961083
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787664587480
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787664762417
+      }
+    ],
+    "3.4 Gerar código dos modelos": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663961115
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787664769092
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787664898860
+      }
+    ],
+    "3.5 Escrever property test para round-trip de Product": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663961141
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787664909496
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787665130450
+      }
+    ],
+    "3.6 Escrever property test para round-trip de CartItem": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663961175
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787664910389
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787665131390
+      }
+    ],
+    "3.7 Escrever property test para campos obrigatórios ausentes": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663961213
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787665136640
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787665266470
+      }
+    ],
+    "3.8 Escrever unit tests de edge case para desserialização de Product": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663961243
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787665137578
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787665267674
+      }
+    ],
+    "4.1 Criar `lib/core/pricing/pricing_calculator.dart`": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663961275
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787664155496
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787664342043
+      }
+    ],
+    "4.2 Escrever property test para preço unitário com acréscimo de leite": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663961309
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787664349908
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787664578247
+      }
+    ],
+    "4.3 Escrever property test para line total = unit × quantity": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663961348
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787664350985
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787664579587
+      }
+    ],
+    "4.4 Escrever property test para subtotal = soma dos line totals": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663961374
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787664352288
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787664580989
+      }
+    ],
+    "4.5 Escrever property test para total com piso em zero após desconto": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663961409
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787664353162
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787664581839
+      }
+    ],
+    "5.1 Criar LocalProductDataSource com catálogo mockado e resolver de imagem": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663961440
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787664588657
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787664761511
+      }
+    ],
+    "5.2 Criar ProductRepository": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663961475
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787664770015
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787664895628
+      }
+    ],
+    "5.3 Regenerar DI para registrar o repositório": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663961515
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787665138977
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787665265195
+      }
+    ],
+    "5.4 Escrever property test para filtro por categoria (soundness/completeness)": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663961542
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787665140378
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787665268992
+      }
+    ],
+    "5.5 Escrever property test para resolução de imagem": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663961573
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787665141246
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787665269812
+      }
+    ],
+    "6. Checkpoint - Garantir base compilando e testada": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663961607
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787681075633
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787681456834
+      }
+    ],
+    "7.1 Criar `lib/features/login/stores/login_store.dart`": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663961640
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787664905743
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787665126741
+      }
+    ],
+    "7.2 Escrever property test para paridade de toggles": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663961679
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787665278273
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787666780786
+      }
+    ],
+    "7.3 Escrever property test para classificação de validade de email": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663961715
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787665279212
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787666782803
+      }
+    ],
+    "7.4 Escrever unit test de edge case para senha vazia/whitespace": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663961740
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787665280632
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787666781821
+      }
+    ],
+    "8.1 Criar `lib/features/product_detail/stores/product_detail_store.dart`": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663961775
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787665276831
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787666780606
+      }
+    ],
+    "8.2 Escrever property test para invariante de piso de quantidade": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663961807
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787667263922
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787667381324
+      }
+    ],
+    "8.3 Escrever property test para CartItem preservar seleções": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663961839
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787667264739
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787667380137
+      }
+    ],
+    "9.1 Criar `lib/features/cart/stores/cart_store.dart`": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663961866
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787664906803
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787665128106
+      }
+    ],
+    "9.2 Escrever property test para disponibilidade de checkout espelhar carrinho vazio": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663961892
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787665281779
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787666778128
+      }
+    ],
+    "9.3 Escrever unit test de edge case para promo code inválido": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663961923
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787666789274
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787666991213
+      }
+    ],
+    "10.1 Criar `lib/features/menu/stores/menu_store.dart`": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663961957
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787664908238
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787665129218
+      }
+    ],
+    "10.2 Regenerar DI e confirmar resolução de todas as Stores": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663961988
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787666788175
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787666992272
+      }
+    ],
+    "10.3 Escrever smoke test de wiring de DI": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663962017
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787667002922
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787667248594
+      }
+    ],
+    "11.1 Criar `lib/core/theme/app_theme.dart`": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663962042
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787664771375
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787664897815
+      }
+    ],
+    "11.2 Criar `lib/core/routing/app_routes.dart`": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663962073
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787664772302
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787664896837
+      }
+    ],
+    "12.1 Refatorar LoginPage para usar LoginStore": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663962143
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787666998411
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787667247739
+      }
+    ],
+    "12.2 Implementar MenuPage e ProductCard": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663962175
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787666999710
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787667245363
+      }
+    ],
+    "12.3 Implementar ProductDetailPage": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663962208
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787667000682
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787667243999
+      }
+    ],
+    "12.4 Implementar CartPage e CartLine": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663962240
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787667002080
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787667246342
+      }
+    ],
+    "12.5 Escrever property test para badge FEATURED (lógica de decisão)": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663962276
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787667391135
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787681063636
+      }
+    ],
+    "12.6 Escrever widget tests para Login e navegação": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663962313
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787667400719
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787681060016
+      }
+    ],
+    "12.7 Escrever widget tests para Menu": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663962339
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787667401475
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787681059364
+      }
+    ],
+    "12.8 Escrever widget tests para ProductDetail": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663962373
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787667392094
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787681062453
+      }
+    ],
+    "12.9 Escrever widget tests para Cart": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663962400
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787667393105
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787681061414
+      }
+    ],
+    "13. Checkpoint final - Garantir que tudo compila e passa": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787663962434
+      },
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787681461382
+      }
+    ],
+    "4. Implementar PricingCalculator (lógica pura em centavos)": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787664581869
+      }
+    ],
+    "11. Implementar tema e roteamento": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787664897848
+      }
+    ],
+    "3. Implementar modelos de domínio e enums de opções": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787665267711
+      }
+    ],
+    "5. Implementar catálogo de produtos (repository + data source)": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787665269882
+      }
+    ],
+    "7. Implementar LoginStore": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787666782832
+      }
+    ],
+    "9. Implementar CartStore": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787666991283
+      }
+    ],
+    "10. Implementar MenuStore": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787667248641
+      }
+    ],
+    "8. Implementar ProductDetailStore": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787667381359
+      }
+    ],
+    "12. Implementar telas e navegação": [
+      {
+        "executionId": "2568c11a-c50c-4357-8bb3-ce19fa6c205f",
+        "chatSessionId": "sess_65ad9316-dc67-405f-a579-0343406692c2",
+        "timestamp": 1787681063677
+      }
+    ]
+  }
+}

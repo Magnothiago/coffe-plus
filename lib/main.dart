@@ -1,7 +1,12 @@
-import 'package:coffe_plus/features/login/pages/login_page.dart';
+import 'package:coffe_plus/core/routing/app_routes.dart';
+import 'package:coffe_plus/core/theme/app_theme.dart';
+import 'package:coffe_plus/di/injection.dart';
 import 'package:flutter/material.dart';
 
 void main() {
+  // Registra todas as dependências injetáveis antes de a interface ser exibida
+  // (Req 1.4).
+  configureDependencies();
   runApp(const MyApp());
 }
 
@@ -13,9 +18,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-      home: const LoginPage(),
+      title: 'The Sensory Pour',
+      theme: AppTheme.theme,
+      initialRoute: AppRoutes.login,
+      onGenerateRoute: AppRoutes.onGenerateRoute,
     );
   }
 }
