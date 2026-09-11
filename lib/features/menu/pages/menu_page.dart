@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../card_cafe.dart';
 
 class MenuPage extends StatefulWidget {
   const MenuPage({super.key});
@@ -38,7 +39,7 @@ class _MenuPageState extends State<MenuPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   ChoiceChip(
-                    color: MaterialStateProperty.all(Colors.blue),
+                    backgroundColor: Colors.blue,
                     label: Text("Espresso"),
                     selected: true,
                   ),
@@ -62,17 +63,12 @@ class _MenuPageState extends State<MenuPage> {
             Expanded(
               child: ListView.builder(
                 itemBuilder: (context, index) {
-                  return Container(
-                    height: 200,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      color: Colors.grey[500],
-                    ),
-                    margin: EdgeInsets.symmetric(vertical: 4),
-                    padding: EdgeInsets.all(8),
-                    // color: Colors.grey[200], // Removed because color is now set in BoxDecoration
-                    child: Center(
-                      child: Image.asset('assets/images/image_1.jpg'),
+                  return Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: MeuCard(
+                      imagePath: 'assets/images/image_1.jpg',
+                      title: 'Coffee Title $index',
+                      description: 'Description for coffee $index',
                     ),
                   );
                 },
