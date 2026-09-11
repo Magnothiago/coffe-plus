@@ -1,3 +1,4 @@
+import 'package:coffe_plus/features/menu/pages/menu_page.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -72,7 +73,11 @@ class _LoginForm extends StatelessWidget {
           width: double.infinity,
           height: 52,
           child: ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute<void>(builder: (context) => const MenuPage()),
+              );
+            },
             style: ElevatedButton.styleFrom(
               backgroundColor: const Color.fromRGBO(60, 42, 33, 1),
             ),
@@ -97,6 +102,43 @@ class _LoginForm extends StatelessWidget {
             ),
             Expanded(
               child: Divider(color: const Color.fromRGBO(60, 42, 33, 1)),
+            ),
+          ],
+        ),
+        Row(
+          children: [
+            Expanded(
+              child: OutlinedButton.icon(
+                style: OutlinedButton.styleFrom(
+                  side: BorderSide(
+                    width: 1,
+                    style: BorderStyle.solid,
+                    color: const Color.fromRGBO(60, 42, 33, 1),
+                  ),
+                ),
+                onPressed: () {
+                  print("Google button pressed");
+                },
+                icon: Icon(Icons.g_mobiledata),
+                label: Text("Google"),
+              ),
+            ),
+            const SizedBox(width: 16),
+            Expanded(
+              child: OutlinedButton.icon(
+                style: OutlinedButton.styleFrom(
+                  side: BorderSide(
+                    width: 1,
+                    style: BorderStyle.solid,
+                    color: const Color.fromRGBO(60, 42, 33, 1),
+                  ),
+                ),
+                onPressed: () {
+                  print("Apple button pressed");
+                },
+                icon: Icon(Icons.apple),
+                label: Text("Apple"),
+              ),
             ),
           ],
         ),
