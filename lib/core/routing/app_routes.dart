@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 
 import '../../features/cart/pages/cart_page.dart';
 import '../../features/catalog/models/product.dart';
+import '../../features/home/pages/home_page.dart';
 import '../../features/login/pages/login_page.dart';
 import '../../features/menu/pages/menu_page.dart';
 import '../../features/product_detail/pages/product_detail_page.dart';
@@ -20,6 +21,9 @@ class AppRoutes {
 
   /// Rota da tela de Login (tela inicial).
   static const String login = '/login';
+
+  /// Rota da tela Home (lista de cafés do backend).
+  static const String home = '/home';
 
   /// Rota da tela de Menu / Explorar Sabores.
   static const String menu = '/menu';
@@ -39,6 +43,12 @@ class AppRoutes {
         return MaterialPageRoute<void>(
           settings: settings,
           builder: (_) => const LoginPage(),
+        );
+
+      case home:
+        return MaterialPageRoute<void>(
+          settings: settings,
+          builder: (_) => const HomePage(),
         );
 
       case menu:

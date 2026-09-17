@@ -16,12 +16,61 @@
 /// mesmo gerador de rotas usado em produção.
 library;
 
+import 'package:coffe_plus/core/network/api_exception.dart';
 import 'package:coffe_plus/core/routing/app_routes.dart';
 import 'package:coffe_plus/di/injection.dart';
+import 'package:coffe_plus/features/home/data/home_repository.dart';
+import 'package:coffe_plus/features/home/models/coffee.dart';
+import 'package:coffe_plus/features/home/pages/home_page.dart';
+import 'package:coffe_plus/features/login/data/auth_repository.dart';
 import 'package:coffe_plus/features/login/pages/login_page.dart';
 import 'package:coffe_plus/features/menu/pages/menu_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+
+/// Dublê de [AuthRepository] usado nos testes de widget, evitando chamadas de
+/// rede reais. [succeeds] controla se o login é aceito ou rejeitado (401).
+class _FakeAuthRepository implements AuthRepository {
+  _FakeAuthRepository({this.succeeds = true});
+
+  final bool succeeds;
+
+  @override
+  Future<String> login({required String login, required String senha}) async {
+    if (!succeeds) throw const UnauthorizedException();
+    return 'fake-jwt-token';
+  }
+}
+
+/// Substitui o [AuthRepository] real por um dublê no [getIt], evitando
+/// chamadas de rede reais nos testes de widget da [LoginPage].
+void _registerFakeAuthRepository({bool succeeds = true}) {
+  if (getIt.isRegistered<AuthRepository>()) {
+    getIt.unregister<AuthRepository>();
+  }
+  getIt.registerLazySingleton<AuthRepository>(
+    () => _FakeAuthRepository(succeeds: succeeds),
+  );
+}
+
+/// Dublê de [HomeRepository] usado nos testes de widget, evitando chamadas de
+/// rede reais quando a navegação alcança a [HomePage].
+class _FakeHomeRepository implements HomeRepository {
+  const _FakeHomeRepository();
+
+  @override
+  Future<List<Coffee>> getCoffees() async => const [];
+}
+
+/// Substitui o [HomeRepository] real por um dublê no [getIt].
+void _registerFakeHomeRepository() {
+  if (getIt.isRegistered<HomeRepository>()) {
+    getIt.unregister<HomeRepository>();
+  }
+  getIt.registerLazySingleton<HomeRepository>(
+    () => const _FakeHomeRepository(),
+  );
+}
 
 /// [NavigatorObserver] de teste que registra os nomes das rotas empilhadas,
 /// permitindo verificar a navegação sem depender da renderização completa da
@@ -34,16 +83,24 @@ class _RouteRecorder extends NavigatorObserver {
     pushedRoutes.add(route.settings.name);
     super.didPush(route, previousRoute);
   }
+
+  @override
+  void didReplace({Route<dynamic>? newRoute, Route<dynamic>? oldRoute}) {
+    pushedRoutes.add(newRoute?.settings.name);
+    super.didReplace(newRoute: newRoute, oldRoute: oldRoute);
+  }
 }
 
 /// Envolve a [LoginPage] em um [MaterialApp] com o gerador de rotas real, de
 /// modo que a navegação nomeada para `/menu` seja resolvida como em produção.
 /// Um [observer] opcional captura os pushes de rota.
 Widget _wrapLoginPage([NavigatorObserver? observer]) => MaterialApp(
-      home: const LoginPage(),
-      onGenerateRoute: AppRoutes.onGenerateRoute,
-      navigatorObservers: observer != null ? <NavigatorObserver>[observer] : const [],
-    );
+  home: const LoginPage(),
+  onGenerateRoute: AppRoutes.onGenerateRoute,
+  navigatorObservers: observer != null
+      ? <NavigatorObserver>[observer]
+      : const [],
+);
 
 /// Define uma janela de teste alta o suficiente para que todo o conteúdo do
 /// card de login seja construído e caiba na tela.
@@ -59,6 +116,8 @@ void main() {
     // Idempotência: limpa qualquer registro anterior antes de reconfigurar.
     await getIt.reset();
     configureDependencies();
+    _registerFakeAuthRepository();
+    _registerFakeHomeRepository();
   });
 
   tearDown(() async {
@@ -66,8 +125,9 @@ void main() {
   });
 
   group('LoginPage — estrutura (Reqs 3.1, 3.2)', () {
-    testWidgets('exibe o fundo (Image) e um Card central (Req 3.1)',
-        (tester) async {
+    testWidgets('exibe o fundo (Image) e um Card central (Req 3.1)', (
+      tester,
+    ) async {
       _useTallSurface(tester);
 
       await tester.pumpWidget(_wrapLoginPage());
@@ -80,8 +140,9 @@ void main() {
       expect(find.byType(Card), findsOneWidget);
     });
 
-    testWidgets('exibe o título serifado "The Sensory Pour" (Req 3.2)',
-        (tester) async {
+    testWidgets('exibe o título serifado "The Sensory Pour" (Req 3.2)', (
+      tester,
+    ) async {
       _useTallSurface(tester);
 
       await tester.pumpWidget(_wrapLoginPage());
@@ -127,28 +188,31 @@ void main() {
   });
 
   group('LoginPage — links e provedores sociais (Req 3.8)', () {
-    testWidgets('exibe Forgot Password?, divisor, Google/Apple e Create account',
-        (tester) async {
-      _useTallSurface(tester);
+    testWidgets(
+      'exibe Forgot Password?, divisor, Google/Apple e Create account',
+      (tester) async {
+        _useTallSurface(tester);
 
-      await tester.pumpWidget(_wrapLoginPage());
-      await tester.pumpAndSettle();
+        await tester.pumpWidget(_wrapLoginPage());
+        await tester.pumpAndSettle();
 
-      expect(find.text('Forgot Password?'), findsOneWidget);
-      expect(find.text('OR CONTINUE WITH'), findsOneWidget);
-      expect(find.byKey(const Key('login_google_button')), findsOneWidget);
-      expect(find.byKey(const Key('login_apple_button')), findsOneWidget);
-      expect(find.text('Google'), findsOneWidget);
-      expect(find.text('Apple'), findsOneWidget);
-      expect(find.text('Create an account'), findsOneWidget);
-    });
+        expect(find.text('Forgot Password?'), findsOneWidget);
+        expect(find.text('OR CONTINUE WITH'), findsOneWidget);
+        expect(find.byKey(const Key('login_google_button')), findsOneWidget);
+        expect(find.byKey(const Key('login_apple_button')), findsOneWidget);
+        expect(find.text('Google'), findsOneWidget);
+        expect(find.text('Apple'), findsOneWidget);
+        expect(find.text('Create an account'), findsOneWidget);
+      },
+    );
   });
 
   group('LoginPage — navegação (Req 3.7)', () {
-    testWidgets(
-        'com credenciais válidas, SIGN IN navega para o Menu',
-        (tester) async {
+    testWidgets('com credenciais válidas, SIGN IN navega para a Home', (
+      tester,
+    ) async {
       _useTallSurface(tester);
+      _registerFakeAuthRepository(succeeds: true);
 
       final observer = _RouteRecorder();
       await tester.pumpWidget(_wrapLoginPage(observer));
@@ -165,26 +229,22 @@ void main() {
       );
       await tester.pumpAndSettle();
 
-      // Toca em SIGN IN. O push da rota nomeada ocorre de forma síncrona ao
-      // tratar o toque, então o observer registra a navegação sem que uma nova
-      // frame precise ser desenhada (evitando exercitar o layout da tela de
-      // destino).
+      // Toca em SIGN IN; o login é assíncrono (dublê de AuthRepository), logo
+      // aguardamos o pumpAndSettle para a navegação ocorrer.
       await tester.tap(find.byKey(const Key('login_sign_in_button')));
+      await tester.pumpAndSettle();
 
-      // A rota nomeada do Menu foi empilhada (Req 3.7). O gerador de rotas real
-      // (AppRoutes.onGenerateRoute) mapeia essa rota para a MenuPage.
-      expect(observer.pushedRoutes, contains(AppRoutes.menu));
+      // A rota nomeada da Home foi empilhada (Req 3.7).
+      expect(observer.pushedRoutes, contains(AppRoutes.home));
       expect(
-        AppRoutes.onGenerateRoute(
-          const RouteSettings(name: AppRoutes.menu),
-        ),
+        AppRoutes.onGenerateRoute(const RouteSettings(name: AppRoutes.home)),
         isA<MaterialPageRoute<void>>(),
       );
     });
 
-    testWidgets(
-        'com email inválido, SIGN IN não navega e mantém a LoginPage',
-        (tester) async {
+    testWidgets('com email inválido, SIGN IN não navega e mantém a LoginPage', (
+      tester,
+    ) async {
       _useTallSurface(tester);
 
       final observer = _RouteRecorder();
@@ -215,5 +275,35 @@ void main() {
       expect(find.byType(LoginPage), findsOneWidget);
       expect(find.byType(MenuPage), findsNothing);
     });
+
+    testWidgets(
+      'com credenciais rejeitadas pelo backend (401), SIGN IN não navega e '
+      'exibe mensagem de erro',
+      (tester) async {
+        _useTallSurface(tester);
+        _registerFakeAuthRepository(succeeds: false);
+
+        final observer = _RouteRecorder();
+        await tester.pumpWidget(_wrapLoginPage(observer));
+        await tester.pumpAndSettle();
+
+        await tester.enterText(
+          find.byKey(const Key('login_email_field')),
+          'user@example.com',
+        );
+        await tester.enterText(
+          find.byKey(const Key('login_password_field')),
+          'wrong-password',
+        );
+        await tester.pumpAndSettle();
+
+        await tester.tap(find.byKey(const Key('login_sign_in_button')));
+        await tester.pumpAndSettle();
+
+        expect(observer.pushedRoutes, isNot(contains(AppRoutes.home)));
+        expect(find.byType(LoginPage), findsOneWidget);
+        expect(find.text('Login ou senha inválidos.'), findsOneWidget);
+      },
+    );
   });
 }

@@ -33,10 +33,13 @@ class _LoginPageState extends State<LoginPage> {
   /// validação (Reqs 3.5, 3.6) só aparecem depois do primeiro toque em SIGN IN.
   bool _submitted = false;
 
-  void _onSignInPressed() {
+  void _onSignInPressed() async {
     setState(() => _submitted = true);
-    if (_store.canSubmit) {
-      Navigator.pushNamed(context, AppRoutes.menu); // Req 3.7
+    if (!_store.canSubmit) return;
+    final success = await _store.login();
+    if (!mounted) return;
+    if (success) {
+      Navigator.pushReplacementNamed(context, AppRoutes.home); // Req 3.7
     }
   }
 
@@ -49,10 +52,7 @@ class _LoginPageState extends State<LoginPage> {
         fit: StackFit.expand,
         children: [
           // Imagem de fundo (Req 3.1).
-          Image.asset(
-            'assets/images/background_login.jpeg',
-            fit: BoxFit.cover,
-          ),
+          Image.asset('assets/images/background_login.jpeg', fit: BoxFit.cover),
           // Overlay escuro para contraste do card.
           Container(color: Colors.black.withValues(alpha: 0.35)),
           // Card central.
@@ -161,8 +161,12 @@ class _LoginForm extends StatelessWidget {
         const SizedBox(height: 8),
 
         // Remember me + Forgot Password (Reqs 3.4, 3.8).
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        // Wrap (em vez de Row) evita overflow horizontal em telas estreitas,
+        // permitindo que "Forgot Password?" quebre para a linha seguinte.
+        Wrap(
+          alignment: WrapAlignment.spaceBetween,
+          crossAxisAlignment: WrapCrossAlignment.center,
+          runSpacing: 4,
           children: [
             Observer(
               builder: (_) => Row(
@@ -185,11 +189,32 @@ class _LoginForm extends StatelessWidget {
         ),
         const SizedBox(height: 8),
 
+        // Erro retornado pelo backend (400/401/rede) na última tentativa.
+        Observer(
+          builder: (_) => store.errorMessage == null
+              ? const SizedBox.shrink()
+              : Padding(
+                  padding: const EdgeInsets.only(bottom: 8),
+                  child: Text(
+                    store.errorMessage!,
+                    style: TextStyle(color: theme.colorScheme.error),
+                  ),
+                ),
+        ),
+
         // Botão SIGN IN (Reqs 3.5, 3.6, 3.7).
-        ElevatedButton(
-          key: const Key('login_sign_in_button'),
-          onPressed: onSignIn,
-          child: const Text('SIGN IN'),
+        Observer(
+          builder: (_) => ElevatedButton(
+            key: const Key('login_sign_in_button'),
+            onPressed: store.isLoading ? null : onSignIn,
+            child: store.isLoading
+                ? const SizedBox(
+                    width: 20,
+                    height: 20,
+                    child: CircularProgressIndicator(strokeWidth: 2),
+                  )
+                : const Text('SIGN IN'),
+          ),
         ),
         const SizedBox(height: 24),
 
@@ -234,13 +259,11 @@ class _LoginForm extends StatelessWidget {
         const SizedBox(height: 20),
 
         // Link para criar conta (Req 3.8).
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+        // Wrap evita overflow horizontal quando o texto não cabe em uma linha.
+        Wrap(
+          alignment: WrapAlignment.center,
           children: [
-            Text(
-              'New to The Sensory Pour? ',
-              style: theme.textTheme.bodySmall,
-            ),
+            Text('New to The Sensory Pour? ', style: theme.textTheme.bodySmall),
             GestureDetector(
               onTap: () {}, // Stub: cadastro fora do escopo.
               child: Text(

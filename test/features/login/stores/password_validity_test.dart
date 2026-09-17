@@ -1,6 +1,8 @@
 import 'package:coffe_plus/features/login/stores/login_store.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+import 'fake_auth_repository.dart';
+
 /// Testes de exemplo (edge case) para a validação de senha do [LoginStore]
 /// (Req 3.6). Uma senha vazia ou composta apenas por whitespace deve ser
 /// classificada como inválida; uma senha real deve ser válida.
@@ -8,7 +10,7 @@ void main() {
   group('LoginStore.isPasswordValid (Req 3.6)', () {
     late LoginStore store;
 
-    setUp(() => store = LoginStore());
+    setUp(() => store = LoginStore(const FakeAuthRepository()));
 
     test('senha vazia => isPasswordValid falso', () {
       store.setPassword('');
@@ -27,12 +29,14 @@ void main() {
       expect(store.isPasswordValid, isFalse);
     });
 
-    test('senha só com whitespace (tabs/newlines) => isPasswordValid falso',
-        () {
-      store.setPassword('\t \n');
+    test(
+      'senha só com whitespace (tabs/newlines) => isPasswordValid falso',
+      () {
+        store.setPassword('\t \n');
 
-      expect(store.isPasswordValid, isFalse);
-    });
+        expect(store.isPasswordValid, isFalse);
+      },
+    );
 
     test('senha real => isPasswordValid verdadeiro', () {
       store.setPassword('s3nh4-v4lid4');

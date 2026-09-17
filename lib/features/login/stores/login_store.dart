@@ -10,6 +10,9 @@ library;
 import 'package:injectable/injectable.dart';
 import 'package:mobx/mobx.dart';
 
+import '../../../core/network/api_exception.dart';
+import '../data/auth_repository.dart';
+
 part 'login_store.g.dart';
 
 /// Expressão regular usada para classificar o formato de um endereço de email.
@@ -25,6 +28,10 @@ class LoginStore = LoginStoreBase with _$LoginStore;
 
 /// Base observável de [LoginStore].
 abstract class LoginStoreBase with Store {
+  LoginStoreBase(this._authRepository);
+
+  final AuthRepository _authRepository;
+
   /// Email digitado pelo cliente.
   @observable
   String email = '';
@@ -40,6 +47,14 @@ abstract class LoginStoreBase with Store {
   /// Indica se a opção "Remember me" está ativada (Req 3.4).
   @observable
   bool rememberMe = false;
+
+  /// Indica se uma requisição de login está em andamento.
+  @observable
+  bool isLoading = false;
+
+  /// Mensagem de erro da última tentativa de login (400/401/rede), ou `null`.
+  @observable
+  String? errorMessage;
 
   /// Verdadeiro se o [email] (após trim) tem formato de email válido (Req 3.5).
   @computed
@@ -70,4 +85,29 @@ abstract class LoginStoreBase with Store {
   /// Alterna o estado de "Remember me" entre ativado e desativado (Req 3.4).
   @action
   void toggleRememberMe() => rememberMe = !rememberMe;
+
+  /// Envia [email]/[password] ao backend (`POST /auth/login`).
+  ///
+  /// Retorna `true` em caso de sucesso (token salvo pelo [AuthRepository]).
+  /// Em falha, popula [errorMessage] com mensagem amigável e retorna `false`.
+  @action
+  Future<bool> login() async {
+    errorMessage = null;
+    isLoading = true;
+    try {
+      await _authRepository.login(login: email.trim(), senha: password);
+      return true;
+    } on UnauthorizedException {
+      errorMessage = 'Login ou senha inválidos.';
+      return false;
+    } on BadRequestException {
+      errorMessage = 'Informe login e senha.';
+      return false;
+    } on ApiException catch (e) {
+      errorMessage = e.message;
+      return false;
+    } finally {
+      isLoading = false;
+    }
+  }
 }

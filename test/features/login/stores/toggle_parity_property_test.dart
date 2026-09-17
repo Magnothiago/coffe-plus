@@ -11,6 +11,8 @@
 import 'package:coffe_plus/features/login/stores/login_store.dart';
 import 'package:glados/glados.dart';
 
+import 'fake_auth_repository.dart';
+
 void main() {
   // Gerador `any.togglesSequence`: número de toggles a aplicar, em faixa ampla
   // o bastante para cobrir contagens pares e ímpares (ver design/Property 4).
@@ -20,13 +22,10 @@ void main() {
   //
   // Estado inicial de `obscurePassword` é `true`. Após `n` toggles o valor
   // final deve ser igual ao inicial se `n` for par, e o oposto se `n` for ímpar.
-  Glados<int>(
-    anyTogglesSequence,
-    ExploreConfig(numRuns: 100),
-  ).test(
+  Glados<int>(anyTogglesSequence, ExploreConfig(numRuns: 100)).test(
     'Property 4: togglePasswordVisibility respeita a paridade dos toggles',
     (toggleCount) {
-      final store = LoginStore();
+      final store = LoginStore(const FakeAuthRepository());
       final initial = store.obscurePassword;
 
       for (var i = 0; i < toggleCount; i++) {
@@ -47,13 +46,10 @@ void main() {
   //
   // Estado inicial de `rememberMe` é `false`. Após `n` toggles o valor final
   // deve ser igual ao inicial se `n` for par, e o oposto se `n` for ímpar.
-  Glados<int>(
-    anyTogglesSequence,
-    ExploreConfig(numRuns: 100),
-  ).test(
+  Glados<int>(anyTogglesSequence, ExploreConfig(numRuns: 100)).test(
     'Property 4: toggleRememberMe respeita a paridade dos toggles',
     (toggleCount) {
-      final store = LoginStore();
+      final store = LoginStore(const FakeAuthRepository());
       final initial = store.rememberMe;
 
       for (var i = 0; i < toggleCount; i++) {
